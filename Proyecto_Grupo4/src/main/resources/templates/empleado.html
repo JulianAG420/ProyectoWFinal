@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Empleados</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        h1{
+            text-align: center;
+            color: blue;
+        }
+        
+
+        a{
+            color: red;
+        }
+        .table thead th{
+            background-color: green;
+
+        }
+        body{
+            background-color: black;
+        }
+        col{
+             background-color: black;
+        }
+        
+        nav{
+           color: black;
+        }
+    
+                </style>
+                
+                <body>                       
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+        <li class="nav-item disabled">
+        <a class="nav-link" href="#">Empleados<span class="sr-only">(current)</span></a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="home_1.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="clienteN">Insertar Cliente</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="empleadoN">Insertar Empleado</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="cliente">Cliente</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Construyendo....</a>
+      </li>
+  
+    </ul>
+  </div>
+</nav>
+    </body>
+                <body>
+                    
+  <form th:action="@{/empleado}"method ="get">
+      <input id="txtSearch" type="text" name="keyword">
+      <button type="submit">Buscar</button>
+      
+  </form>
+
+
+                    <h1 th:text="${titulo}"></h1>
+             
+                    <table class="table table-dark table-striped">
+
+
+                        <thead class="thead-dark">
+                            <tr>
+                                <th bgcolor=blue scope="col" >Nombre</th>
+                                <th  bgcolor=blue scope="col">Primer Apellido</th>
+                                <th  bgcolor=blue scope="col">Segundo Apellido</th>
+                            
+                          
+                                <th  bgcolor=blue scope="col">Edad</th>
+                              
+                            
+                                <th  bgcolor=blue scope="col">Numero de Gafete</th>
+                                  <th  bgcolor=blue scope="col">Seccion de trabajo</th>
+                                <th  bgcolor=yellow scope="col">Editar</th>
+                                 <th  bgcolor=red scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+
+
+                        <tbody>
+                        <th:block th:each="user : ${empleado}">
+                            <tr>
+                                <td  bgcolor=lightgreen th:text="${user.getNombre}"></td>
+                                <td bgcolor=lightgreen th:text="${user.getApellido1}"></td>
+                                  <td bgcolor=lightgreen th:text="${user.getApellido2}"></td>
+                 
+                                <td bgcolor=lightgreen th:text="${user.getEdad}"></td>
+                                <td bgcolor=lightgreen th:text="${user.getGafete}"></td>
+                                    <td bgcolor=orange th:text="${user.getSeccion.getSeccion}"></td>
+                                    
+                                     <td>
+                            <a  th:href="@{/editEmpleado/{id}(id=${user.getId})}">Edit</a>
+                        </td>
+                                <td>
+                                    <a th:href="@{/deleteE/{id}(id=${user.getId})}">Delete</a>
+                                </td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </body>
+        </html>

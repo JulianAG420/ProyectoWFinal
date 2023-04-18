@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(cafe.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+     width: 100vw;
+  min-height: 100vh;
+    
+  background: #d9a7c7; 
+background: -webkit-linear-gradient(to right, #fffcdc, #d9a7c7); 
+background: linear-gradient(to right, #fffcdc, #d9a7c7); 
+ }
+ul{
+    background-color:rgb(124, 93, 45);
+}
+.grid-container {
+        display: grid;
+        gap: 10px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bolder;
+    }
+li {
+align-items: center;
+font-size: xx-large;
+}
+p {background-color:#bca; width:200px; border:1px solid green;}
+.item {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+
+
