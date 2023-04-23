@@ -44,4 +44,9 @@ public class ClienteService implements IClienteService{
      public List<Cliente> findByKeyword(String keyword){
         return clienteRepository.findByKeyword(keyword);
     }
+     @Override
+     public Cliente findByNombre(String username){
+         return clienteRepository.findByNombre(username);
+     }
+    
 }

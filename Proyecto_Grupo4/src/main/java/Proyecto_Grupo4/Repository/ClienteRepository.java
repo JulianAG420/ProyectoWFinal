@@ -17,6 +17,8 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ClienteRepository  extends CrudRepository<Cliente,Long>{
+     Cliente findByNombre(String nombre);
+     
        @Query(value="select * from cliente e where e.apellido1 like %:keyword% or e.apellido2 like %:keyword%", nativeQuery =true)
     List<Cliente> findByKeyword(@Param("keyword") String keyword);
 }
