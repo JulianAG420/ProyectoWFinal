@@ -44,7 +44,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item disabled">
-        <a class="nav-link" href="#">Inventario <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#">Inventario Cafeteras <span class="sr-only">(current)</span></a>
       </li>
      <li class="nav-item">
         <a class="nav-link" href="home_1.html">Home</a>
@@ -60,6 +60,9 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="inventarioN">Ingresar Inventario</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="inventario">Inventario de bolsas</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="inventarioN11">Ingresar Cafeteras</a>
@@ -83,9 +86,10 @@
                                 <th bgcolor=blue scope="col" >Marca</th>
                                 <th  bgcolor=blue scope="col">Precio</th>
                                 <th  bgcolor=blue scope="col">Cantidad </th>
+                                <th  bgcolor=blue scope="col">Color </th>
                             
                             
-                                <th  bgcolor=blue scope="col">Tueste</th>
+                                <th  bgcolor=blue scope="col">Tamanio</th>
                                 <th  bgcolor=yellow scope="col">Editar</th>
                                  <th  bgcolor=red scope="col">Eliminar</th>
                             </tr>
@@ -93,20 +97,21 @@
 
 
                         <tbody>
-                        <th:block th:each="user : ${bolsas_cafe}">
+                        <th:block th:each="user : ${cafeteras}">
                             <tr>
                                 <td  bgcolor=lightgreen th:text="${user.getMarca}"></td>
                                 <td bgcolor=lightgreen th:text="${user.getPrecio}"></td>
                                   <td bgcolor=lightgreen th:text="${user.getCantidad}"></td>
+                                     <td bgcolor=lightgreen th:text="${user.getColor}"></td>
                  
                         
-                                    <td bgcolor=orange th:text="${user.getTueste.getTueste}"></td>
+                                    <td bgcolor=orange th:text="${user.getTamanio.getTamanio}"></td>
                                     
                                      <td>
-                            <a  th:href="@{/editInventario/{id}(id=${user.getId})}">Edit</a>
+                            <a  th:href="@{/editInventario12/{id}(id=${user.getId})}">Edit</a>
                         </td>
                                 <td>
-                                    <a th:href="@{/deleteIn/{id}(id=${user.getId})}">Delete</a>
+                                    <a th:href="@{/deleteIn1/{id}(id=${user.getId})}">Delete</a>
                                 </td>
                             </tr>
                         </th:block>
