@@ -24,6 +24,13 @@ img{
     height: auto;
     width: auto;
 }
+li {
+align-items: center;
+font-size: xx-large;
+}
+ul{
+    background-color:rgb(124, 93, 45);
+}
 .contenedor{
     max-width: 1200px;
     padding: 10px;
